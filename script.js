@@ -1320,3 +1320,75 @@ document.addEventListener(
    ============================== */
 
 updateCarousel();
+
+/* ==============================
+   MOBILE CAROUSEL SWIPE
+   ============================== */
+
+const swipeCarousel =
+    document.querySelector(".carousel");
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+let touchEndX = 0;
+let touchEndY = 0;
+
+swipeCarousel.addEventListener(
+    "touchstart",
+    (event) => {
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+        touchStartY =
+            event.changedTouches[0].screenY;
+    },
+    {
+        passive: true
+    }
+);
+
+swipeCarousel.addEventListener(
+    "touchend",
+    (event) => {
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        touchEndY =
+            event.changedTouches[0].screenY;
+
+        const horizontalDistance =
+            touchEndX - touchStartX;
+
+        const verticalDistance =
+            touchEndY - touchStartY;
+
+        if (
+            Math.abs(horizontalDistance) < 50
+            ||
+            Math.abs(horizontalDistance) <
+            Math.abs(verticalDistance)
+        ) {
+            return;
+        }
+
+        if (horizontalDistance < 0) {
+            document
+                .querySelector(
+                    ".carousel-button.next"
+                )
+                .click();
+        }
+
+        else {
+            document
+                .querySelector(
+                    ".carousel-button.previous"
+                )
+                .click();
+        }
+    },
+    {
+        passive: true
+    }
+);
