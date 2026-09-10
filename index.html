@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ==============================
+         PAGE SETTINGS
+         ============================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nick Dunn Photography</title>
+
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         HERO
+         ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>Nick Dunn</h1>
+
+            <p class="hero-subtitle">
+                Photography
+            </p>
+
+            <div class="hero-line"></div>
+
+            <p class="hero-tagline">
+                Places. Details. Perspective.
+            </p>
+        </div>
+    <!-- ==============================
+         HERO SCROLL INDICATOR
+         ============================== -->
+
+<a
+    class="hero-scroll"
+    href="#featured"
+    aria-label="Scroll to featured photography"
+>
+    <span>SCROLL</span>
+    <span class="hero-scroll-arrow">↓</span>
+</a>
+
+    </section>
+
+
+    <!-- ==============================
+         FEATURED PHOTOGRAPHY
+         ============================== -->
+
+    <section class="featured" id="featured">
+
+        <h2>Featured Photography</h2>
+
+
+        <!-- ==============================
+             FEATURED CAROUSEL
+             ============================== -->
+
+        <div class="carousel">
+
+            <!-- Previous photo button -->
+            <button
+                class="carousel-button previous"
+                aria-label="Previous photo"
+            >
+                &#10094;
+            </button>
+
+
+            <!-- ==============================
+                 CAROUSEL PHOTOS
+                 ============================== -->
+
+            <div class="carousel-track">
+                <!-- Photos are automatically added by photos.js + script.js -->
+            </div>
+
+
+            <!-- Next photo button -->
+            <button
+                class="carousel-button next"
+                aria-label="Next photo"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         COLLECTIONS
+         ============================== -->
+
+    <section class="collections">
+
+        <h2>Collections</h2>
+
+        <div class="collection-grid">
+            <!-- Collection cards are automatically added by script.js -->
+        </div>
+
+    </section>
+
+    <!-- ==============================
+         FULLSCREEN LIGHTBOX
+         ============================== -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+
+        <!-- Close fullscreen button -->
+        <button
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close fullscreen photo"
+        >
+            &times;
+        </button>
+
+
+        <!-- Previous fullscreen photo -->
+        <button
+            class="lightbox-arrow lightbox-previous"
+            id="lightboxPrevious"
+            aria-label="Previous fullscreen photo"
+        >
+            &#10094;
+        </button>
+
+
+        <!-- ==============================
+             LIGHTBOX PHOTO + INFORMATION
+             ============================== -->
+
+        <div class="lightbox-content">
+
+            <!-- Fullscreen photograph -->
+            <img
+                class="lightbox-image"
+                id="lightboxImage"
+                alt=""
+            >
+
+
+            <!-- Photo information -->
+            <div class="lightbox-info">
+
+                <h3 id="lightboxTitle"></h3>
+
+                <p id="lightboxExif"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Next fullscreen photo -->
+        <button
+            class="lightbox-arrow lightbox-next"
+            id="lightboxNext"
+            aria-label="Next fullscreen photo"
+        >
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         COLLECTION VIEWER
+         ============================== -->
+
+    <div
+        class="collection-viewer"
+        id="collectionViewer"
+    >
+
+        <button
+            class="collection-viewer-close"
+            id="collectionViewerClose"
+            aria-label="Close collection"
+        >
+            &times;
+        </button>
+
+        <div class="collection-viewer-inner">
+
+            <h2 id="collectionViewerTitle"></h2>
+                
+
+            <div
+                class="collection-photo-grid"
+                id="collectionPhotoGrid"
+            >
+                <!-- Collection photos are added automatically -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+         ============================== -->
+
+    <!-- Photography data generated by Update Portfolio -->
+<script src="photos.js"></script>
+
+<!-- Website functionality -->
+<script src="script.js"></script>
+
+</body>
+
+</html>
