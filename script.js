@@ -1392,3 +1392,73 @@ swipeCarousel.addEventListener(
         passive: true
     }
 );
+/* ==============================
+   MOBILE LIGHTBOX SWIPE
+   ============================== */
+
+let lightboxTouchStartX = 0;
+let lightboxTouchStartY = 0;
+
+let lightboxTouchEndX = 0;
+let lightboxTouchEndY = 0;
+
+lightbox.addEventListener(
+    "touchstart",
+    (event) => {
+        lightboxTouchStartX =
+            event.changedTouches[0].screenX;
+
+        lightboxTouchStartY =
+            event.changedTouches[0].screenY;
+    },
+    {
+        passive: true
+    }
+);
+
+lightbox.addEventListener(
+    "touchend",
+    (event) => {
+        lightboxTouchEndX =
+            event.changedTouches[0].screenX;
+
+        lightboxTouchEndY =
+            event.changedTouches[0].screenY;
+
+        const horizontalDistance =
+            lightboxTouchEndX -
+            lightboxTouchStartX;
+
+        const verticalDistance =
+            lightboxTouchEndY -
+            lightboxTouchStartY;
+
+        if (
+            Math.abs(horizontalDistance) < 50
+            ||
+            Math.abs(horizontalDistance) <
+            Math.abs(verticalDistance)
+        ) {
+            return;
+        }
+
+        if (horizontalDistance < 0) {
+            document
+                .querySelector(
+                    ".lightbox-next"
+                )
+                .click();
+        }
+
+        else {
+            document
+                .querySelector(
+                    ".lightbox-previous"
+                )
+                .click();
+        }
+    },
+    {
+        passive: true
+    }
+);

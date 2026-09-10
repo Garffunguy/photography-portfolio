@@ -837,6 +837,13 @@ normal centered position.
 
 @media (max-width: 600px) {
 
+    /* ------------------------------
+   MOBILE LIGHTBOX ARROWS
+   ------------------------------ */
+
+.lightbox-arrow {
+    display: none;
+}
     .collection-photo-grid {
         columns: 1;
     }
